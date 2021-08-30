@@ -1,0 +1,30 @@
+siteName:
+  en: "Water/Maple"
+  zh: "清水青枫"
+siteDescription:
+  en: "Digital dream garden for life"
+  zh: "生命的数字梦园"
+selectLang:
+  en: "Please Select Language"
+  zh: "请选择语言"
+relatedPosts:
+  en: "Related Posts"
+  zh: "其它"
+differentLanguage:
+  en: "Read this page in"
+  zh: "可选用其它语言阅读此页"
+viewIn:
+  en: "View in"
+  zh: "来看"
+allPosts:
+  en: "All Posts"
+  zh: "全集"
+feedbackAlert:
+  en: "Thanks for sending your feedback."
+  zh: "谢谢您的反馈。"
+commentsCorner:
+  en: "Comments:"
+  zh: "评论区："
+postComments:
+  en: "Post comment..."
+  zh: "发表评论。。。"

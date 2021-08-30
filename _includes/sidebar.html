@@ -1,0 +1,62 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+
+      <h1>
+        <a href="/">
+          {{ site.data.translations['siteName'][page.lang] }}
+        </a>
+      </h1>
+      <p class="lead">
+        {{ site.data.translations['siteDescription'][page.lang] }}
+      </p>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages | where:"lang", page.lang %}
+      {% for node in pages_list %}
+      {% if node.title != null %}
+      {% if node.layout == "page" %}
+      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title
+        }}</a>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/{{ page.lang }}">{{
+        site.data.translations['allPosts'][page.lang] }}</a>
+    </nav>
+
+    {% if page.layout != 'index' %}
+    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% if posts.size == 0 %}
+    {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% endif %}
+    {% if posts.size > 1 %}
+
+    <footer class="lang-options">
+      <em>{{ site.data.translations['selectLang'][page.lang] }}:</em>
+      <ul>
+        <!-- {% for post in posts %} -->
+        <li><a title="{{ site.data.translations['viewIn'][page.lang] }} {{ site.data.languages[post.lang].label }}"
+            class="{{post.lang}}" href="{{ site.base-url }}{{ post.url }}">
+            {{ site.data.languages[post.lang].icon }}
+            {{ site.data.languages[post.lang].label }}
+          </a>
+        </li>
+        <!-- {% endfor %} -->
+      </ul>
+      {% endif %}
+      {% endif %}
+
+      <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+
+</div>

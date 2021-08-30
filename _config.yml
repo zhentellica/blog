@@ -1,1 +1,13 @@
-theme: jekyll-theme-time-machine
+# Dependencies
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            清水青枫 Clear Water Green Maple
+tagline:          'Will be in multiple languages'
+description:      '生命的数字梦田 Digital dream garden for life'
+baseurl:          /
+
+issues_repo: Zhentellica/blog

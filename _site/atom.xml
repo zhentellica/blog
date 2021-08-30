@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>清水青枫 Clear Water Green Maple</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2021-08-30T14:44:31-04:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>幸福的道与术</title>
+   <link href="http://localhost:4000/zh/2021/03/01/way-and-technique/"/>
+   <updated>2021-03-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/zh/2021/03/01/way-and-technique</id>
+   <content type="html">&lt;p&gt;敬请期待。。。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Way and technique for a happy life</title>
+   <link href="http://localhost:4000/en/2021/03/01/way-and-technique/"/>
+   <updated>2021-03-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/en/2021/03/01/way-and-technique</id>
+   <content type="html">&lt;p&gt;Stay tuned…&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>生活的数字孪生</title>
+   <link href="http://localhost:4000/zh/2021/02/01/digital-twin/"/>
+   <updated>2021-02-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/zh/2021/02/01/digital-twin</id>
+   <content type="html">&lt;p&gt;敬请期待。。。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Real life's digital twin</title>
+   <link href="http://localhost:4000/en/2021/02/01/digital-twin/"/>
+   <updated>2021-02-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/en/2021/02/01/digital-twin</id>
+   <content type="html">&lt;p&gt;Stay tuned…&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>没有脸书没有微信</title>
+   <link href="http://localhost:4000/zh/2021/01/01/no-fb/"/>
+   <updated>2021-01-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/zh/2021/01/01/no-fb</id>
+   <content type="html">&lt;p&gt;敬请期待。。。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>No Facebook, No WeChat</title>
+   <link href="http://localhost:4000/en/2021/01/01/no-fb/"/>
+   <updated>2021-01-01T00:00:00-05:00</updated>
+   <id>http://localhost:4000/en/2021/01/01/no-fb</id>
+   <content type="html">&lt;p&gt;Stay tuned…&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

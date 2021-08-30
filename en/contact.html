@@ -1,0 +1,56 @@
+---
+layout: page
+title: Feedback
+lang: en
+lang-ref: contact
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+  <p class="mb-4">Thank you for your interest. Please send your message here. </p>
+
+  <form>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name..">
+    <label for="email">email</label>
+    <input type="email" id="email" name="email" placeholder="Your email..">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+    <button id="submit_msg" type="button">Send</button>
+  </form>
+
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBURdBkZwNpv4gms824wgkD2GmH2FfUVnk",
+      authDomain: "zhentellica-id.firebaseapp.com",
+      projectId: "zhentellica-id",
+      storageBucket: "zhentellica-id.appspot.com",
+      messagingSenderId: "104959261067",
+      appId: "1:104959261067:web:b36d8a8e6f5fcb04bc178e",
+      measurementId: "G-D4ZPPJJTL6"
+    };
+
+    // Initialize Firebase
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="/public/js/app.js"></script>
+
+
+</body>
+
+</html>

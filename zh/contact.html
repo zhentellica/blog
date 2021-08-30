@@ -1,0 +1,55 @@
+---
+layout: page
+title: 反馈
+lang: zh
+lang-ref: contact
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+  <p class="mb-4">感谢您有兴趣联系我们，请发送以下信息。</p>
+  <form>
+
+    <label for="name">姓名</label>
+    <input type="text" id="name" name="name" placeholder="您的姓名..">
+    <label for="email">邮箱</label>
+    <input type="email" id="email" name="email" placeholder="您的邮箱地址..">
+    <label for="message">信息</label>
+    <textarea id="message" name="message" placeholder="写点什么.." style="height:200px"></textarea>
+    <button id="submit_msg" type="button">发送</button>
+  </form>
+
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBURdBkZwNpv4gms824wgkD2GmH2FfUVnk",
+      authDomain: "zhentellica-id.firebaseapp.com",
+      projectId: "zhentellica-id",
+      storageBucket: "zhentellica-id.appspot.com",
+      messagingSenderId: "104959261067",
+      appId: "1:104959261067:web:b36d8a8e6f5fcb04bc178e",
+      measurementId: "G-D4ZPPJJTL6"
+    };
+
+    // Initialize Firebase
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="/public/js/app.js"></script>
+
+
+</body>
+
+</html>

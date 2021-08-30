@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<body>
+  <!--
+<body class="theme-base-0b">
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+
+      <h1>
+        <a href="/">
+          清水青枫
+        </a>
+      </h1>
+      <p class="lead">
+        生命的数字梦园
+      </p>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      
+
+      
+      
+      
+      
+      <a class="sidebar-nav-item active" href="/zh/about/">开篇</a>
+      
+      
+      
+      
+      
+      <a class="sidebar-nav-item" href="/zh/contact/">反馈</a>
+      
+      
+      
+      
+      
+      
+      
+
+      <a class="sidebar-nav-item" href="/zh">全集</a>
+    </nav>
+
+    
+    
+    
+    
+
+    <footer class="lang-options">
+      <em>请选择语言:</em>
+      <ul>
+        <!--  -->
+        <li><a title="来看 English"
+            class="en" href="/en/about/">
+            🇺🇸
+            English
+          </a>
+        </li>
+        <!--  -->
+        <li><a title="来看 中文"
+            class="zh" href="/zh/about/">
+            🇨🇳
+            中文
+          </a>
+        </li>
+        <!--  -->
+      </ul>
+      
+      
+
+      <p>&copy; 2021. All rights reserved.</p>
+  </div>
+
+</div>
+-->
+
+  <div class="content container">
+    <div class="page">
+  <h1 class="page-title">开篇</h1>
+  <p><img src="/public/img/qsqf.jpg" alt="" /></p>
+
+<p>很早就想拥有一片属于自己的数字田园，这里可以尽情地耕耘，自由自在地发挥，充分享受满园秋色！</p>
+
+<p>清水青枫就是这样的田园，它是现实的孪生，是真正田园生活缺一不可的核心元素。</p>
+
+<p>清水青枫是过去的回眸、有辉煌也有囧途；也是未来的远望、有激动也有憧憬。它是思绪的自然流露；也是足迹的忠实记录。</p>
+
+
+  
+  <script>
+    const commentsSection = document.getElementById('comments');
+    const commentsWrapper = commentsSection.querySelector('#comments-wrapper');
+    const commentsCount = commentsSection.querySelector('#comments-count');
+
+    const commentsObserver = new IntersectionObserver((entries, self) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                fetchComments(); // this is the important part
+                self.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '200px 0px 0px 0px' });
+
+    commentsObserver.observe(commentsSection);
+
+    const fetchComments = async () => {
+        try {
+            const comments = await (await fetch(
+                'https://api.github.com/repos//issues//comments'
+            )).json();
+            initRenderComments(comments);
+        } catch (e) {
+            commentsWrapper.innerHTML = `<p>Unable to retrieve the comments for this post.</p>`;
+        }
+    }
+
+    const loadScript = (src) => {
+        const scriptElement = document.createElement('script');
+        document.body.appendChild(scriptElement);
+
+        return new Promise((resolve) => {
+            scriptElement.onload = resolve;
+
+            // Important to register onload before setting src
+            scriptElement.src = src;
+        });
+    }
+
+    const commentScripts = [
+        'https://unpkg.com/marked@0.3.6/marked.min.js',
+        'https://unpkg.com/dompurify@1.0.8/dist/purify.min.js',
+        'https://unpkg.com/dayjs@1.8.21/dayjs.min.js',
+        'https://unpkg.com/dayjs@1.7.8/plugin/relativeTime.js',
+    ];
+
+    // Reminder: this gets called when the viewport intersects with the comments section
+    const initRenderComments = async (comments) => {
+        if (!comments.length) {
+            commentsWrapper.innerHTML = `<p>No comments yet 👀 Be the first to post!</p>`;
+            return;
+        }
+        // Load all comment script dependencies async
+        await Promise.all(commentScripts.map((script) => loadScript(script)));
+        renderComments(comments);
+    }
+
+    const renderComments = (comments) => {
+        // load the relativeTime plugin for dayjs so we can express dates relative to now
+        dayjs.extend(dayjs_plugin_relativeTime);
+
+        commentsCount.innerText = `(${comments.length})`;
+
+        const commentsList = document.createElement('ol');
+        commentsList.className = 'comments-list';
+        commentsList.setAttribute('aria-label', 'Comments on this blog post');
+
+        commentsList.innerHTML = comments
+            .sort((comment1, comment2) => {
+                return comment1.created_at < comment2.created_at ? 1 : -1;
+            })
+            .map(comment => {
+                const datePosted = dayjs(comment.created_at).fromNow();
+                const user = comment.user;
+                const body = DOMPurify.sanitize(marked(comment.body));
+                const postedByAuthor = comment.author_association === 'OWNER';
+                const edited = comment.created_at !== comment.updated_at;
+
+                return `<li class="comment">
+                    <div class="commenter">
+                        <img src="${user.avatar_url}" alt="" aria-hidden="true" class="meta avatar" />
+                        <a
+                            href="https://github.com/${user.login}"
+                            class="meta username"
+                            >${user.login}</a
+                        >
+                        <div class="meta date-posted">commented <time datetime="${comment.created_at}">${datePosted}</time></div>
+                        ${postedByAuthor ? '<span class="meta tag author-badge">Author</span>' : ''}
+                        ${edited ? `<span class="meta comment-edited">Edited</span>` : ''}
+                    </div>
+                    <div class="comment-body">${body}</div>
+                </li>`;
+            })
+            .join('');
+
+        commentsWrapper.innerHTML = '';
+        commentsWrapper.appendChild(commentsList);
+    }
+</script>
+
+
+
+
+
+
+<section id="comments">
+    <div class="comment-actions">
+        <h3> 评论区： <span id="comments-count"></span></h3>
+        <a class="button" href="https://github.com/Zhentellica/blog/issues/3">
+            发表评论。。。
+        </a>
+    </div>
+    <div id="comments-wrapper">
+        <!-- Loading -->
+    </div>
+</section>
+  
+
+</div>
+    <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+    开篇 &middot; 清水青枫 Clear Water Green Maple
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="/en/about/" />
+  
+  <link rel="alternate" hreflang="zh" href="/zh/about/" />
+  
+  
+</head>
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+
+      <h1>
+        <a href="/">
+          清水青枫
+        </a>
+      </h1>
+      <p class="lead">
+        生命的数字梦园
+      </p>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      
+
+      
+      
+      
+      
+      <a class="sidebar-nav-item active" href="/zh/about/">开篇</a>
+      
+      
+      
+      
+      
+      <a class="sidebar-nav-item" href="/zh/contact/">反馈</a>
+      
+      
+      
+      
+      
+      
+      
+
+      <a class="sidebar-nav-item" href="/zh">全集</a>
+    </nav>
+
+    
+    
+    
+    
+
+    <footer class="lang-options">
+      <em>请选择语言:</em>
+      <ul>
+        <!--  -->
+        <li><a title="来看 English"
+            class="en" href="/en/about/">
+            🇺🇸
+            English
+          </a>
+        </li>
+        <!--  -->
+        <li><a title="来看 中文"
+            class="zh" href="/zh/about/">
+            🇨🇳
+            中文
+          </a>
+        </li>
+        <!--  -->
+      </ul>
+      
+      
+
+      <p>&copy; 2021. All rights reserved.</p>
+  </div>
+
+</div>
+    <!-- 
+
+
+
+
+<footer class="lang-options">
+    <em>可选用其它语言阅读此页:</em>
+    <ul>
+        
+        <li><a title="来看 English"
+                class="en" href="/en/about/">
+                🇺🇸
+                English
+            </a>
+        </li>
+        
+        <li><a title="来看 中文"
+                class="zh" href="/zh/about/">
+                🇨🇳
+                中文
+            </a>
+        </li>
+        
+    </ul>
+
+
+    
+     -->
+  </div>
+</body>
+
+</html>
