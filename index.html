@@ -14,7 +14,7 @@ title: Home
   {% for lang in site.data.languages %}
   {% assign language = lang[1] %}
 
-  <li><a href="/blog/{{lang[0]}}/about/">{{language.icon}} {{ language.label }} ({{ lang[0] }})</a></li>
+  <li><a href="{{lang[0]}}/about/">{{language.icon}} {{ language.label }} ({{ lang[0] }})</a></li>
 
   {% endfor %}
 </ul>
