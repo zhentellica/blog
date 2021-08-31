@@ -8,6 +8,7 @@ permalink:        pretty
 title:            清水青枫 Clear Water Green Maple
 tagline:          'Will be in multiple languages'
 description:      '生命的数字梦田 Digital dream garden for life'
+url:              https://zhentellica.github.io
 baseurl:          /blog
 
 issues_repo: Zhentellica/blog
