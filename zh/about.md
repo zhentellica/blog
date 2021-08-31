@@ -6,7 +6,7 @@ lang-ref: about
 comments_id: 3
 ---
 
-![](/public/img/qsqf.jpg)
+![]({{ site.baseurl }}/public/img/qsqf.jpg)
 
 很早就想拥有一片属于自己的数字田园，这里可以尽情地耕耘，自由自在地发挥，充分享受满园秋色！
 

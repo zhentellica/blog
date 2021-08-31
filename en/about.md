@@ -5,7 +5,7 @@ lang: en
 lang-ref: about
 comments_id: 4
 ---
-![](/public/img/qsqf.jpg)
+![]({{ site.baseurl }}/public/img/qsqf.jpg)
 
 Wanted to have my own digital garden for a long time, where I can cultivate as much as I can, play freely, and fully enjoy the autumn scenery of the garden!
 
