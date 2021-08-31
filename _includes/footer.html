@@ -10,7 +10,7 @@
     <ul>
         {% for post in posts %}
         <li><a title="{{ site.data.translations['viewIn'][page.lang] }} {{ site.data.languages[post.lang].label }}"
-                class="{{post.lang}}" href="{{ site.base-url }}{{ post.url }}">
+                class="{{post.lang}}" href="{{ site.baseurl }}{{ post.url }}">
                 {{ site.data.languages[post.lang].icon }}
                 {{ site.data.languages[post.lang].label }}
             </a>
