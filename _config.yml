@@ -2,7 +2,7 @@
 highlighter:      pygments
 
 # Permalinks
-permalink:        date
+permalink:        pretty
 
 # Setup
 title:            清水青枫 Clear Water Green Maple
