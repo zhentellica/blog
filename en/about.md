@@ -13,4 +13,4 @@ Water/Maple is such a pastoral, it is the twin of reality and the core element o
 
 Water/Maple is a glimpse of the past, glorious and embarrassing; it is also a long-term vision of the future, with excitement and longing. It is a natural flow of thoughts; it is also a faithful record of footprints. 
 
-Water is the soul of such pastoral, and the long flow of Clear Water will bring it to life. Maple is an idyllic style, and the permanent residence of Green Maple will bring pastoral autumn forests. 
+Water is the soul of such pastoral, and the long flow of Clear Water will bring it to life. Maple is an idyllic style of such pastoral, and the permanent residence of Green Maple will bring it to pastoral autumn forests. 
