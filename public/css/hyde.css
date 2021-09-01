@@ -83,7 +83,7 @@ html {
   margin-right: auto;
   width: 50%;
   border-radius: 50%;
-  background: transparent;
+  background: rgba(1, 1, 1, 1);
 }
 
 /* About section */
