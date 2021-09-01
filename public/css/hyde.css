@@ -83,6 +83,7 @@ html {
   margin-right: auto;
   width: 50%;
   border-radius: 50%;
+  background: transparent;
 }
 
 /* About section */
