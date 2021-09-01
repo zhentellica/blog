@@ -1,7 +1,10 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
-    <div class="sidebar-about">
+    <div class="sidebar-logo">
+      <img src="{{ site.baseurl }}/public/img/maple.jpg" alt="Avatar" style="width:200px">
+    </div>
 
+    <div class="sidebar-about">
       <h1>
         <a href={{"/" | prepend: site.baseurl}}>
           {{ site.data.translations['siteName'][page.lang] }}

@@ -77,6 +77,10 @@ html {
   color: rgb(255, 255, 255);
 }
 
+.sidebar-logo img {
+  border-radius: 50%;
+}
+
 /* About section */
 .sidebar-about h1 {
   color: rgb(3, 19, 61);
