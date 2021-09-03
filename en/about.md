@@ -7,7 +7,7 @@ comments_id: 4
 ---
 ![]({{ site.baseurl }}/public/img/qsqf.jpg)
 
-Wanted to have my own digital garden for a long time, where I can cultivate as much as I can, play freely, and fully enjoy the autumn scenery of the garden!
+Wanted to have my own digital pastoral for a long time, where I can cultivate as much as I can, play freely, and fully enjoy the autumn scenery of the garden!
 
 cWater/gMaple is such a pastoral, it is the twin of reality and the core element of a true pastoral life.
 
